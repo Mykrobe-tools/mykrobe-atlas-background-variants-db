@@ -1,5 +1,5 @@
 # Access the id_github file from Secret Manager
-timeout: 30m
+timeout: 120m
 steps:
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: "bash"
