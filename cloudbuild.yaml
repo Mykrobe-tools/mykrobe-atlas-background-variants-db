@@ -41,6 +41,7 @@ steps:
 
   # Build and push API image
   - name: "gcr.io/cloud-builders/docker"
+    timeout: 30m
     args: ["build", "-t", "$_IMAGE_REPOSITORY:$SHORT_SHA", "-f", "./Dockerfile", "."]
     volumes:
       - name: "ssh"
