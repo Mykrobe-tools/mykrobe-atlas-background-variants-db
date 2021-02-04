@@ -12,7 +12,7 @@ RUN git clone --branch v${mykrobe_version} https://github.com/Mykrobe-tools/mykr
 WORKDIR /usr/src/app/mykrobe-predictor
 RUN pip3 install -r requirements.txt && python3 setup.py install
 
-RUN mkdir -m 777 /mongo-db
+RUN mkdir /mongo-db
 
 WORKDIR /usr/src/app
 COPY . .
@@ -28,5 +28,6 @@ RUN nohup bash -c "mongod --quiet --dbpath /mongo-db &" && \
 
 FROM mongo
 COPY --from=builder /mongo-db /mongo-db
+RUN chmod 777 /mongo-db
 
 CMD mongod --quiet --dbpath /mongo-db
