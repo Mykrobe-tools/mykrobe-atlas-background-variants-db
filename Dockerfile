@@ -12,7 +12,7 @@ RUN git clone --branch v${mykrobe_version} https://github.com/Mykrobe-tools/mykr
 WORKDIR /usr/src/app/mykrobe-predictor
 RUN pip3 install -r requirements.txt && python3 setup.py install
 
-RUN mkdir /mongo-db
+RUN mkdir -m 777 /mongo-db
 
 WORKDIR /usr/src/app
 COPY . .
