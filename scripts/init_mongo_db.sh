@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TO_INIT_DB = 1
+TO_INIT_DB=1
 
 if [ -d "/database/mongo-db" ]
 then
-  TO_INIT_DB = 0
+  TO_INIT_DB=0
 else
   mkdir -p /database/mongo-db
 fi
