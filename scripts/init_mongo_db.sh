@@ -13,7 +13,7 @@ mongod --quiet --dbpath /database/mongo-db
 
 sleep 60
 
-if [ TO_INIT_DB -eq 1 ]
+if [ $TO_INIT_DB -eq 1 ]
 then
   cp /data/mongodump.tar.gz /database
   cd /database
