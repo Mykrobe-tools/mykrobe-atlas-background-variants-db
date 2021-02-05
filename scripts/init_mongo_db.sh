@@ -2,6 +2,7 @@
 
 if [ ! -d "/database/mongo-db" ]
 then
+  mkdir -p /database/mongo-db
   mongod --quiet --dbpath /database/mongo-db &
   sleep 10
   cp /data/mongodump.tar.gz /database
