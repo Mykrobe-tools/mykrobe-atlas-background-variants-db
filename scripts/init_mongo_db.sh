@@ -9,9 +9,9 @@ else
   mkdir -p /database/mongo-db
 fi
 
-mongod --quiet --dbpath /database/mongo-db
+mongod --quiet --dbpath /database/mongo-db &
 
-sleep 60
+sleep 10
 
 if [ $TO_INIT_DB -eq 1 ]
 then
