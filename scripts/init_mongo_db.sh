@@ -14,4 +14,4 @@ then
   sleep 10
 fi
 
-mongod --quiet --dbpath /database/mongo-db
+mongod --bind_ip_all --dbpath /database/mongo-db
